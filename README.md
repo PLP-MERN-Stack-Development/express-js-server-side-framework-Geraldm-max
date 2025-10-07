@@ -1,62 +1,92 @@
-# Express.js RESTful API Assignment
+# 🧩 Week 2 Express.js API Assignment
 
-This assignment focuses on building a RESTful API using Express.js, implementing proper routing, middleware, and error handling.
+This project is a simple **Product Management API** built using **Express.js**.  
+It demonstrates CRUD operations, middleware usage, and environment configuration.
 
-## Assignment Overview
+---
 
-You will:
-1. Set up an Express.js server
-2. Create RESTful API routes for a product resource
-3. Implement custom middleware for logging, authentication, and validation
-4. Add comprehensive error handling
-5. Develop advanced features like filtering, pagination, and search
+## 🚀 Features
+- Get all products  
+- Get a product by ID  
+- Add (create) a new product  
+- Update an existing product  
+- Delete a product  
+- Uses environment variables via `.env`  
+- Includes middleware for logging, validation, error handling, and authentication  
 
-## Getting Started
+---
 
-1. Accept the GitHub Classroom assignment invitation
-2. Clone your personal repository that was created by GitHub Classroom
-3. Install dependencies:
-   ```
-   npm install
-   ```
-4. Run the server:
-   ```
-   npm start
-   ```
+## 🗂️ Folder Structure
+week2-express-api/
+├── server.js
+├── routes/
+│ └── productRoutes.js
+├── middleware/
+│ ├── logger.js
+│ ├── auth.js
+│ ├── validation.js
+│ └── errorHandler.js
+├── utils/
+│ └── errors.js
+├── .env.example
+├── .gitignore
+├── README.md
+└── package.json
 
-## Files Included
 
-- `Week2-Assignment.md`: Detailed assignment instructions
-- `server.js`: Starter Express.js server file
-- `.env.example`: Example environment variables file
+---
 
-## Requirements
+## ⚙️ Installation & Setup
 
-- Node.js (v18 or higher)
-- npm or yarn
-- Postman, Insomnia, or curl for API testing
+### 1️⃣ Clone the repository
+```bash
+git clone <your-repo-url>
+cd week2-express-api
 
-## API Endpoints
+Install dependencies
+npm install
 
-The API will have the following endpoints:
+3️⃣ Set up environment variables
 
-- `GET /api/products`: Get all products
-- `GET /api/products/:id`: Get a specific product
-- `POST /api/products`: Create a new product
-- `PUT /api/products/:id`: Update a product
-- `DELETE /api/products/:id`: Delete a product
 
-## Submission
+▶️ Running the Server
+Development mode (auto restart)
+npm run dev
 
-Your work will be automatically submitted when you push to your GitHub Classroom repository. Make sure to:
+Production mode
+npm start
 
-1. Complete all the required API endpoints
-2. Implement the middleware and error handling
-3. Document your API in the README.md
-4. Include examples of requests and responses
 
-## Resources
+Server will start on:
+👉 http://localhost:3000
 
-- [Express.js Documentation](https://expressjs.com/)
-- [RESTful API Design Best Practices](https://restfulapi.net/)
-- [HTTP Status Codes](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status) 
+🧪 API Endpoints
+Method	Endpoint	Description
+GET	/api/products	Get all products
+GET	/api/products/:id	Get product by ID
+POST	/api/products	Create a new product
+PUT	/api/products/:id	Update a product
+DELETE	/api/products/:id	Delete a product
+🔑 Authentication
+
+For protected routes, include this header in Postman:
+
+x-api-key: mysecretapikey
+
+🧾 Example Response
+
+GET /api/products
+
+[
+  {
+    "id": "1",
+    "name": "Laptop",
+    "price": 1200,
+    "category": "Electronics"
+  }
+]
+
+👨‍💻 Author
+
+Name: Gerald Munguti
+Program: PLP Web Technologies - Week 2 Express.js Assignment
